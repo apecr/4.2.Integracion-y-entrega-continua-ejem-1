@@ -4,6 +4,13 @@ on:
   push:
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        java: [ '8', '11', '17' ]
+    name: Java ${{ matrix.Java }} sample
 
   test:
     runs-on: ubuntu-20.04
